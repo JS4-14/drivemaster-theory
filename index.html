@@ -3,184 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Protocol | DriveMaster Theory</title>
+    <title>Privacy Policy | DriveMaster Theory</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-deep: #030508;
             --primary: #3B82F6;
-            --cyan: #06b6d4;
-            --danger: #ef4444;
-            --danger-glow: rgba(239, 68, 68, 0.4);
-            --glass-surface: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-main: #e2e8f0;
+            --secondary: #8B5CF6;
+            --danger: #EF4444; /* Added for the warning */
+            --accent: #10B981;
+            --bg-deep: #050505;
+            --text-main: #ffffff;
             --text-muted: #94a3b8;
+            --glass-bg: rgba(20, 20, 30, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-blur: 12px;
         }
 
-        /* --- CYBER GRID BACKGROUND --- */
+        /* --- ANIMATED BACKGROUND --- */
         body {
-            margin: 0;
-            padding: 0;
+            font-family: 'Outfit', sans-serif;
             background-color: var(--bg-deep);
             color: var(--text-main);
-            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
             overflow-x: hidden;
-            background-image: 
-                linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-            min-height: 100vh;
+            background: radial-gradient(circle at top left, #1a1a40, transparent 40%),
+                        radial-gradient(circle at bottom right, #0f2027, transparent 40%),
+                        #050505;
+            background-attachment: fixed;
         }
 
-        /* Vignette overlay */
-        body::after {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, transparent 0%, var(--bg-deep) 90%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
+        /* --- LAYOUT --- */
         .container {
-            max-width: 850px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 60px 20px;
             position: relative;
             z-index: 1;
         }
 
-        /* --- HEADERS --- */
+        /* --- HEADER --- */
         header {
             text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            border-radius: 20px;
-            background: rgba(6, 182, 212, 0.1);
-            border: 1px solid rgba(6, 182, 212, 0.3);
-            color: var(--cyan);
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-            box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--cyan);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--cyan);
-            animation: pulse 2s infinite;
+            margin-bottom: 70px;
+            animation: fadeInDown 1s ease-out;
         }
 
         h1 {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin: 0;
-            line-height: 1;
-            background: linear-gradient(180deg, #fff 0%, #94a3b8 100%);
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .tagline {
+            color: var(--primary);
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: -2px;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
         }
 
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 1.1rem;
+        .last-updated {
             margin-top: 15px;
-            font-weight: 300;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            opacity: 0.7;
         }
 
-        /* --- HOLOGRAPHIC CARDS --- */
+        /* --- GLASS CARDS --- */
         .card {
-            background: var(--glass-surface);
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
             border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 24px;
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(12px);
-            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out backwards;
         }
 
+        /* Staggered Animation Delays */
+        .card:nth-child(2) { animation-delay: 0.1s; }
+        .card:nth-child(3) { animation-delay: 0.2s; }
+        .card:nth-child(4) { animation-delay: 0.3s; }
+        .card:nth-child(5) { animation-delay: 0.4s; }
+
         .card:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        /* Subtle shine effect on hover */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+            transition: 0.5s;
+        }
+        .card:hover::before {
+            left: 100%;
         }
 
         .card h2 {
-            font-family: 'Rajdhani', sans-serif;
-            color: #fff;
+            font-size: 1.4rem;
+            color: var(--text-main);
             margin-top: 0;
-            font-size: 1.5rem;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .card p {
-            color: var(--text-muted);
-            line-height: 1.7;
-            margin-bottom: 0;
-        }
-
-        /* --- THE DANGER ZONE (Retention Warning) --- */
-        .card-danger {
-            background: rgba(239, 68, 68, 0.03);
-            border: 1px solid rgba(239, 68, 68, 0.4);
-            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
-            animation: borderPulse 3s infinite;
-        }
-
-        .card-danger h2 {
-            color: var(--danger);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .card-danger p {
-            color: #fca5a5; /* Light red text */
-            font-weight: 500;
-        }
-
-        .danger-icon-box {
-            width: 36px;
-            height: 36px;
-            background: rgba(239, 68, 68, 0.2);
+        /* Icons for headers */
+        .icon-box {
+            width: 32px;
+            height: 32px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--danger);
             font-size: 1.2rem;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--primary);
         }
 
-        /* --- DECORATIVE ELEMENTS --- */
-        .corner-accent {
-            position: absolute;
-            top: 0; left: 0;
-            width: 40px; height: 40px;
-            border-top: 2px solid var(--cyan);
-            border-left: 2px solid var(--cyan);
-            opacity: 0.5;
-            border-radius: 16px 0 0 0;
+        .card p {
+            color: var(--text-muted);
+            margin: 0;
+            font-weight: 300;
+            font-size: 1.05rem;
+        }
+
+        /* --- WARNING CARD (PULSATING) --- */
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); border-color: rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 0 20px 0 rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 1); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); border-color: rgba(239, 68, 68, 0.4); }
+        }
+
+        .warning-card {
+            border-left: 4px solid var(--danger); 
+            background: linear-gradient(90deg, rgba(239, 68, 68, 0.1), transparent);
+            /* This makes it pulse forever */
+            animation: pulse-red 2s infinite; 
+        }
+        
+        .warning-card .icon-box {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+        }
+
+        .warning-card h2 {
+            color: var(--danger);
         }
 
         /* --- FOOTER --- */
@@ -191,31 +185,40 @@
             border-top: 1px solid var(--glass-border);
             color: var(--text-muted);
             font-size: 0.9rem;
+            animation: fadeIn 1.5s ease;
         }
 
         a {
             color: var(--primary);
             text-decoration: none;
-            transition: 0.2s;
+            font-weight: 600;
+            transition: color 0.2s;
         }
-        a:hover { color: #fff; text-shadow: 0 0 10px var(--primary); }
+
+        a:hover {
+            color: #60a5fa;
+            text-decoration: underline;
+        }
 
         /* --- ANIMATIONS --- */
-        @keyframes pulse {
-            0% { opacity: 1; box-shadow: 0 0 10px var(--cyan); }
-            50% { opacity: 0.5; box-shadow: 0 0 20px var(--cyan); }
-            100% { opacity: 1; box-shadow: 0 0 10px var(--cyan); }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        @keyframes borderPulse {
-            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); border-color: rgba(239, 68, 68, 0.4); }
-            50% { box-shadow: 0 0 20px 0 rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.8); }
-            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); border-color: rgba(239, 68, 68, 0.4); }
-        }
-        
+        /* --- RESPONSIVE --- */
         @media (max-width: 600px) {
             h1 { font-size: 2.5rem; }
             .container { padding: 40px 20px; }
+            .card { padding: 25px; }
         }
     </style>
 </head>
@@ -224,60 +227,64 @@
     <div class="container">
         
         <header>
-            <div class="status-badge">
-                <div class="status-dot"></div>
-                System Secure: Local Storage Active
-            </div>
-            <h1>Privacy Protocol</h1>
-            <div class="subtitle">DriveMaster Theory 2026 // Architecture v1.0</div>
+            <span class="tagline">Official Policy</span>
+            <h1>Privacy First.</h1>
+            <div class="last-updated">Last Updated: February 2026</div>
         </header>
 
-        <div class="card card-danger">
+        <div class="card">
             <h2>
-                <div class="danger-icon-box">⚠️</div>
-                Critical Warning: Data Loss Risk
+                <span class="icon-box">🔒</span>
+                Local-First Architecture
             </h2>
             <p>
-                <strong>STOP AND READ:</strong> DriveMaster utilizes a "Zero-Cloud" architecture. Your data lives exclusively on this device's physical memory.
-                <br><br>
-                <strong>If you uninstall the app or clear the app's storage in Android Settings, your progress, streaks, and saved questions will be permanently deleted.</strong>
-                <br><br>
-                We cannot recover lost data because we never possessed it.
+                DriveMaster Theory is built differently. We believe your data belongs to you. That's why <strong>100% of your progress, quiz history, and readiness scores are stored strictly on your device</strong>. We do not have servers, and we never upload your personal learning data to the cloud.
+            </p>
+        </div>
+
+        <div class="card warning-card">
+            <h2>
+                <span class="icon-box">⚠️</span>
+                Data Retention
+            </h2>
+            <p>
+                Because your data lives exclusively on your phone, <strong>uninstalling the app will permanently delete your progress</strong>. We cannot recover lost data because we never had access to it in the first place. Please keep the app installed until you have passed your test.
             </p>
         </div>
 
         <div class="card">
-            <div class="corner-accent"></div>
-            <h2>🔒 Local-First Sovereignty</h2>
+            <h2>
+                <span class="icon-box">💎</span>
+                Premium Purchases
+            </h2>
             <p>
-                We believe your learning patterns are personal. 100% of your quiz history, readiness scores, and weak topic analysis are computed and stored strictly on your device using encrypted local databases (SQLite & SharedPreferences). No personal data is ever uploaded to our servers.
+                When you unlock Premium features, that status is secured locally on your device via your App Store / Play Store account. It verifies your purchase without transmitting personal usage statistics.
             </p>
         </div>
 
         <div class="card">
-            <h2>💎 Premium Verification</h2>
+            <h2>
+                <span class="icon-box">🔌</span>
+                No Tracking
+            </h2>
             <p>
-                Premium unlocks are verified locally via the App Store / Google Play Store APIs. Your premium status is tied to your store account on this specific device. We do not track your purchase history externally.
+                We do not use invasive third-party analytics, ad trackers, or data harvesting SDKs. The app only uses standard system permissions (like Notifications for study reminders) to function.
             </p>
         </div>
 
         <div class="card">
-            <h2>🚫 Zero-Tracking Policy</h2>
+            <h2>
+                <span class="icon-box">✉️</span>
+                Contact Us
+            </h2>
             <p>
-                We have disabled all third-party ad trackers and behavioral analytics. The app only requests system permissions strictly necessary for core functionality (e.g., Notifications for study reminders).
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>📡 Encrypted Comms</h2>
-            <p>
-                For support inquiries regarding this protocol, contact our engineering team directly:<br><br>
+                Have questions about your privacy? We're here to help.<br>
                 <a href="mailto:support@drivemaster.com">support@drivemaster.com</a>
             </p>
         </div>
 
         <footer>
-            <p>&copy; 2026 DriveMaster Theory. <br>Secure Architecture. Zero Compromise.</p>
+            <p>&copy; 2026 DriveMaster Theory. All rights reserved.</p>
         </footer>
 
     </div>
