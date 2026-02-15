@@ -2,28 +2,152 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Privacy Policy - DriveMaster Theory 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | DriveMaster Theory</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; color: #333; }
-        h1 { color: #2ecc71; }
-        .highlight { background: #f4f4f4; padding: 15px; border-left: 5px solid #2ecc71; margin: 20px 0; }
+        :root {
+            --bg-color: #0B0F1A;
+            --card-bg: #151A2C;
+            --text-main: #ffffff;
+            --text-sub: #A0A4B0;
+            --accent: #3B82F6; /* Blue matching your app */
+            --danger: #EF4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #fff, #A0A4B0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        /* Card Styling */
+        .policy-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        h2 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        p {
+            color: var(--text-sub);
+            margin-bottom: 0;
+        }
+
+        /* Highlight Box for Data Loss Warning */
+        .warning-box {
+            border-left: 4px solid var(--danger);
+            background: rgba(239, 68, 68, 0.1);
+        }
+        
+        .warning-box h2 {
+            color: var(--danger);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p>Last Updated: February 2026</p>
-    
-    <div class="highlight">
-        <strong>Local Data Sovereignty:</strong> DriveMaster Theory 2026 is built with a "Privacy First" architecture. All your progress, test results, and premium status are stored <strong>locally on your device</strong>.
+
+    <div class="container">
+        <header>
+            <h1>Privacy Policy</h1>
+            <div class="subtitle">DriveMaster Theory 2026</div>
+            <div style="margin-top: 10px; font-size: 0.9rem; color: #555;">Effective Date: February 15, 2026</div>
+        </header>
+
+        <div class="policy-card">
+            <h2>1. Data Storage</h2>
+            <p>
+                DriveMaster is architected with a "Local-First" philosophy. All your learning progress, quiz history, mock test results, and readiness scores are stored <strong>strictly locally on your device</strong> using secure internal storage. We do not transmit, upload, or sync your personal learning data to any external cloud server.
+            </p>
+        </div>
+
+        <div class="policy-card warning-box">
+            <h2>2. Critical: Data Retention</h2>
+            <p>
+                Because your data lives 100% on your device, <strong>uninstalling the app or clearing the app's storage via Android Settings will result in the permanent loss of your progress.</strong> We cannot recover lost data because we never had access to it in the first place.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h2>3. Premium Features</h2>
+            <p>
+                If you unlock Premium features, that status is stored securely on your device. Just like your progress, this unlock is tied to your current installation on this specific device.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h2>4. Third-Party Services</h2>
+            <p>
+                The app uses standard Android/iOS APIs for functionality (such as Notifications for study reminders and URL Launcher for opening links). No third-party analytics or tracking SDKs are active in the current release.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h2>5. Contact Us</h2>
+            <p>
+                If you have questions about this policy or need support, please contact us at:<br>
+                <br>
+                <strong><a href="mailto:support@drivemaster.com">support@drivemaster.com</a></strong>
+            </p>
+        </div>
+
+        <footer>
+            &copy; 2026 DriveMaster. All rights reserved.
+        </footer>
     </div>
 
-    <h2>1. Data Collection</h2>
-    <p>We do not collect, store, or transmit any personal data to external servers. Your quiz history and readiness scores remain on your device.</p>
-
-    <h2>2. Third-Party Services</h2>
-    <p>The app uses local SQLite databases and SharedPreferences. No third-party tracking or analytics SDKs are active in the V1 release.</p>
-
-    <h2>3. Contact</h2>
-    <p>For support or privacy inquiries, contact: <strong>filleracct@gmail.com</strong></p>
 </body>
 </html>
